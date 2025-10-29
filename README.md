@@ -7,7 +7,7 @@ Welcome to your team leadership space in the AI-ACE team!
 - **Team Leader**: Tony Lee (@aiegoo) 🚀
 - **Branch**: `aiegoo-lead`
 - **GitHub Profile**: https://github.com/aiegoo
-- **Role**: Team Lead & Course Instructor
+- **Role**: Team Lead
 - **Contact**: creativeucon@gmail.com
 
 ### 🔗 **Quick Links to Your Files:**
