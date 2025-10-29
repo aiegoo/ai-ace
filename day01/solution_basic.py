@@ -14,6 +14,20 @@ Learning objectives:
 Author: AI-ACE Team Reference
 """
 
+def show_team_name():
+    """Display our AI-ACE team name in ASCII art"""
+    print("🏆 Our Team:")
+    print()
+    print(" ▄▄▄· ▪       ▄▄▄·  ▄▄· ▄▄▄ .")
+    print("▐█ ▀█ ██     ▐█ ▀█ ▐█ ▌▪▀▄.▀·")
+    print("▄█▀▀█ ▐█·    ▄█▀▀█ ██ ▄▄▐▀▀▪▄")
+    print("▐█ ▪▐▌▐█▌    ▐█ ▪▐▌▐███▌▐█▄▄▌")
+    print(" ▀  ▀ ▀▀▀     ▀  ▀ ·▀▀▀  ▀▀▀ ")
+    print()
+    print("🎯 AI-ACE Team - AI Track 7회차")
+    print("👥 6 members strong and coding together!")
+    print()
+
 def draw_simple_chicken():
     """
     The simplest possible chicken using just print statements.
@@ -68,19 +82,36 @@ def draw_cute_chicken():
     print("      _| |_")    # Feet
     print()
 
+def draw_special_chicken():
+    """
+    A special cute chicken - simple but charming!
+    """
+    print("🥰 Special Cute Chicken:")
+    print()
+    print("      8c")
+    print("   __/~\\__")
+    print("  (((\_/)))")
+    print("    _) (_")
+    print("           elbee&")
+    print()
+
 def main():
     """
     Main function - runs all our chicken drawings!
     """
+    # Show our team first!
+    show_team_name()
+    
     print("=" * 50)
     print("🎨 DAY 1: ASCII CHICKEN ART - BASIC SOLUTIONS")
     print("=" * 50)
     print()
     
-    # Draw all three chickens
+    # Draw all four chickens
     draw_simple_chicken()
     draw_medium_chicken()
     draw_cute_chicken()
+    draw_special_chicken()  # Our new cute chicken!
     
     print("🎉 Great job! You've created ASCII art!")
     print("💡 Try modifying the characters to create your own design!")

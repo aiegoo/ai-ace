@@ -20,6 +20,25 @@ import time
 import os
 from datetime import datetime
 
+def show_team_name():
+    """Display our AI-ACE team name in ASCII art"""
+    print("🏆" + "=" * 48 + "🏆")
+    print("🎯  OUR TEAM - AI-ACE (AI TRACK 7회차)  🎯")
+    print("🏆" + "=" * 48 + "🏆")
+    print()
+    
+    print(" ▄▄▄· ▪       ▄▄▄·  ▄▄· ▄▄▄ .")
+    print("▐█ ▀█ ██     ▐█ ▀█ ▐█ ▌▪▀▄.▀·")
+    print("▄█▀▀█ ▐█·    ▄█▀▀█ ██ ▄▄▐▀▀▪▄")
+    print("▐█ ▪▐▌▐█▌    ▐█ ▪▐▌▐███▌▐█▄▄▌")
+    print(" ▀  ▀ ▀▀▀     ▀  ▀ ·▀▀▀  ▀▀▀ ")
+    print()
+    print("🎯 AI-ACE Team - AI Track 7회차")
+    print("👥 6 members strong and coding together!")
+    print("📅 October 29 - November 27, 2025 (30 days)")
+    print("🚀 Let's master AI development step by step!")
+    print()
+
 class ChickenFarm:
     """
     A creative chicken farm with multiple chickens and interactive features!
@@ -122,6 +141,20 @@ class ChickenFarm:
         print("     ··   ··")  # Polka dots
         print("       | |")
         print("      ·· ··")
+        print()
+    
+    def draw_cute_chicken(self):
+        """Draw super cute special style chicken."""
+        print(self.colorize("🥰 Cute Chicken (Special Style!)", "magenta", bold=True))
+        print()
+        
+        print("      8c")
+        print("   __/~\\__")
+        print("  (((\_/)))")
+        print("    _) (_")
+        print("           elbee&")
+        print()
+        print(self.colorize("💝 This cute design shows creative ASCII art!", "pink"))
         print()
     
     def create_chicken_scene(self):
@@ -354,6 +387,8 @@ def run_creative_demo():
     farm.main_menu()
 
 if __name__ == "__main__":
+    # Show our team pride first!
+    show_team_name()
     run_creative_demo()
 
 """
