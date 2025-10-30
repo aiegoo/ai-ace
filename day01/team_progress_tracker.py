@@ -126,17 +126,26 @@ class TeamProgressTracker:
                     "advanced_print_methods.py", 
                     "variables_guide.py",
                     "data_types_tutorial.py",
-                    "practice_exercises.py"
+                    "practice_exercises.py",
+                    "day2_advanced_python_interactive.ipynb",
+                    "data_types_practice_notebook.ipynb"
                 ]
                 
                 completed_files = [f for f in expected_files if f"day-2/{f}" in '\n'.join(file_list)]
+                
+                # Count Jupyter notebooks separately
+                jupyter_notebooks = [f for f in completed_files if f.endswith('.ipynb')]
+                python_files = [f for f in completed_files if f.endswith('.py') or f.endswith('.md')]
                 
                 return {
                     "day02_exists": True,
                     "files": file_list,
                     "file_count": len(file_list),
                     "completed_files": completed_files,
-                    "completion_rate": len(completed_files) / len(expected_files) * 100
+                    "jupyter_notebooks": jupyter_notebooks,
+                    "python_files": python_files,
+                    "completion_rate": len(completed_files) / len(expected_files) * 100,
+                    "jupyter_ready": len(jupyter_notebooks) > 0
                 }
             else:
                 return {
@@ -144,7 +153,10 @@ class TeamProgressTracker:
                     "files": [],
                     "file_count": 0,
                     "completed_files": [],
-                    "completion_rate": 0
+                    "jupyter_notebooks": [],
+                    "python_files": [],
+                    "completion_rate": 0,
+                    "jupyter_ready": False
                 }
         except Exception as e:
             return {
@@ -153,7 +165,10 @@ class TeamProgressTracker:
                 "files": [],
                 "file_count": 0,
                 "completed_files": [],
-                "completion_rate": 0
+                "jupyter_notebooks": [],
+                "python_files": [],
+                "completion_rate": 0,
+                "jupyter_ready": False
             }
 
     def generate_progress_report(self):
@@ -209,7 +224,11 @@ class TeamProgressTracker:
                     status_text = "Started"
                     
                 print(f"{status_emoji} Day 2 Progress: {status_text} ({completion:.0f}% complete)")
-                print(f"   📚 Advanced Python: {len(day02['completed_files'])}/5 files")
+                print(f"   📚 Python Files: {len(day02['python_files'])}/5 files")
+                print(f"   📓 Jupyter Notebooks: {len(day02['jupyter_notebooks'])}/2 notebooks")
+                
+                if day02['jupyter_ready']:
+                    print(f"   🚀 Jupyter Ready: Interactive learning enabled!")
                 
                 if completion >= 60:
                     day02_completed += 1
@@ -256,6 +275,7 @@ class TeamProgressTracker:
             print(f"\n💡 NEXT STEPS:")
             print(f"   🎯 Focus on Day 2: Advanced print methods and variables")
             print(f"   📖 Key topics: f-strings, ANSI colors, data types")
+            print(f"   📓 Use Jupyter notebooks for interactive learning")
             print(f"   🤝 Encourage peer learning and code sharing")
 
     def show_quick_links(self):
