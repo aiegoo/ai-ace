@@ -109,6 +109,53 @@ class TeamProgressTracker:
                 "file_count": 0
             }
 
+    def check_day02_progress(self, branch_name):
+        """Check if team member has day02 folder and advanced Python files"""
+        try:
+            # Check if day02 folder exists
+            cmd = f"git ls-tree origin/{branch_name} day-2/"
+            result = subprocess.run(cmd.split(), capture_output=True, text=True)
+            
+            if result.returncode == 0:
+                files = result.stdout.strip().split('\n')
+                file_list = [f.split('\t')[-1] for f in files if f.strip()]
+                
+                # Check for specific Day 2 learning files
+                expected_files = [
+                    "README.md",
+                    "advanced_print_methods.py", 
+                    "variables_guide.py",
+                    "data_types_tutorial.py",
+                    "practice_exercises.py"
+                ]
+                
+                completed_files = [f for f in expected_files if f"day-2/{f}" in '\n'.join(file_list)]
+                
+                return {
+                    "day02_exists": True,
+                    "files": file_list,
+                    "file_count": len(file_list),
+                    "completed_files": completed_files,
+                    "completion_rate": len(completed_files) / len(expected_files) * 100
+                }
+            else:
+                return {
+                    "day02_exists": False,
+                    "files": [],
+                    "file_count": 0,
+                    "completed_files": [],
+                    "completion_rate": 0
+                }
+        except Exception as e:
+            return {
+                "day02_exists": False,
+                "error": str(e),
+                "files": [],
+                "file_count": 0,
+                "completed_files": [],
+                "completion_rate": 0
+            }
+
     def generate_progress_report(self):
         """Generate comprehensive progress report"""
         print("="*70)
@@ -119,10 +166,11 @@ class TeamProgressTracker:
         total_members = len(self.team_members)
         active_members = 0
         day01_completed = 0
+        day02_completed = 0
         
         for branch, member in self.team_members.items():
             print(f"\n👤 {member['name']} ({branch})")
-            print("-" * 40)
+            print("-" * 50)
             
             # Check branch activity
             activity = self.check_branch_activity(branch)
@@ -138,10 +186,35 @@ class TeamProgressTracker:
             # Check Day 1 progress
             day01 = self.check_day01_progress(branch)
             if day01['day01_exists']:
-                print(f"✅ Day 1 Folder: Created ({day01['file_count']} files)")
+                print(f"✅ Day 1 Progress: Completed ({day01['file_count']} files)")
                 day01_completed += 1
             else:
-                print("❌ Day 1 Folder: Not started")
+                print("❌ Day 1 Progress: Not started")
+            
+            # Check Day 2 progress  
+            day02 = self.check_day02_progress(branch)
+            if day02['day02_exists']:
+                completion = day02['completion_rate']
+                if completion >= 80:
+                    status_emoji = "🌟"
+                    status_text = "Excellent"
+                elif completion >= 60:
+                    status_emoji = "✅"
+                    status_text = "Good"
+                elif completion >= 40:
+                    status_emoji = "🔄"
+                    status_text = "In Progress"
+                else:
+                    status_emoji = "🔶"
+                    status_text = "Started"
+                    
+                print(f"{status_emoji} Day 2 Progress: {status_text} ({completion:.0f}% complete)")
+                print(f"   📚 Advanced Python: {len(day02['completed_files'])}/5 files")
+                
+                if completion >= 60:
+                    day02_completed += 1
+            else:
+                print("❌ Day 2 Progress: Not started")
             
             # Additional info
             if 'role' in member:
@@ -159,10 +232,16 @@ class TeamProgressTracker:
         print(f"👥 Total Team Members: {total_members}")
         print(f"🟢 Active Members: {active_members}")
         print(f"🐔 Day 1 Completed: {day01_completed}")
-        print(f"📊 Completion Rate: {(day01_completed/total_members)*100:.1f}%")
+        print(f"� Day 2 Progressing: {day02_completed}")
+        print(f"📊 Overall Progress: {((day01_completed + day02_completed)/(total_members * 2))*100:.1f}%")
+        
+        # Learning milestones
+        print(f"\n📚 LEARNING MILESTONES:")
+        print(f"   🐣 Python Basics (Day 1): {day01_completed}/{total_members}")
+        print(f"   🔥 Advanced Print & Variables (Day 2): {day02_completed}/{total_members}")
         
         # Team health indicator
-        health_score = (active_members + day01_completed) / (total_members * 2) * 100
+        health_score = (active_members + day01_completed + day02_completed) / (total_members * 3) * 100
         if health_score >= 80:
             print(f"🌟 Team Health: EXCELLENT ({health_score:.1f}%)")
         elif health_score >= 60:
@@ -171,6 +250,13 @@ class TeamProgressTracker:
             print(f"⚠️  Team Health: NEEDS ATTENTION ({health_score:.1f}%)")
         else:
             print(f"🚨 Team Health: NEEDS SUPPORT ({health_score:.1f}%)")
+            
+        # Day 2 specific encouragement
+        if day02_completed < total_members:
+            print(f"\n💡 NEXT STEPS:")
+            print(f"   🎯 Focus on Day 2: Advanced print methods and variables")
+            print(f"   📖 Key topics: f-strings, ANSI colors, data types")
+            print(f"   🤝 Encourage peer learning and code sharing")
 
     def show_quick_links(self):
         """Display quick GitHub links for team monitoring"""
