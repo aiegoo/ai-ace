@@ -14,10 +14,10 @@ from datetime import datetime
 class ChickenArtLeader:
     def __init__(self):
         self.team_name = "AI-ACE"
-        self.leader_name = "Tony Lee"
+        self.leader_name = "이병남 (Tony Lee)"
         self.team_members = [
-            "ChangMin", "Heozico", "Joonii93", 
-            "Jsmin2080", "Weisheit129"
+            "장수민 (ChangMin)", "허지호 (Heozico)", "이상준 (Joonii93)", 
+            "정수민 (Jsmin2080)", "고준 (Weisheit129)"
         ]
 
     def show_team_logo(self):

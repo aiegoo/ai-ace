@@ -2,14 +2,19 @@
 
 ## 👥 Team Roster (6 Members Total)
 
-| Member | GitHub Username | Email | Branch Name | Status |
-|--------|----------------|-------|-------------|---------|
-| **Team Lead** | @aiegoo | - | `aiegoo-lead` | ✅ Active |
-| **Member 1** | - | changminis@naver.com | `changminis` | ⏳ Pending Invite |
-| **Member 2** | @heozico | - | `heozico` | ✅ Collaborator |
-| **Member 3** | @joonii93-ops | - | `joonii93-ops` | ✅ Collaborator |
-| **Member 4** | @jsmin2080-afk | 정수민(생성AI_7회차) | `jsmin2080-afk` | ✅ Collaborator |
-| **Member 5** | @weisheit129 | - | `weisheit129` | ✅ Collaborator |
+| Member | GitHub Username | Korean Name | Course Email | Personal Email | Branch Name | Status |
+|--------|----------------|-------------|--------------|----------------|-------------|---------|
+| **Team Lead** | @aiegoo | 이병남 (Tony Lee) | onofftony@gmail.com | creativeucon@gmail.com | `aiegoo-lead` | ✅ Active |
+| **Member 1** | changminis | 장수민 | changminis@naver.com | - | `changminis` | ⏳ Pending Invite |
+| **Member 2** | @heozico | 허지호 | heozico@naver.com | - | `heozico` | ✅ Collaborator |
+| **Member 3** | @joonii93-ops | 이상준 | joonii93@gmail.com | - | `joonii93-ops` | ✅ Collaborator |
+| **Member 4** | @jsmin2080-afk | 정수민 | - | - | `jsmin2080-afk` | ✅ Collaborator |
+| **Member 5** | @weisheit129 | 고준 | weisheit129@gmail.com | - | `weisheit129` | ✅ Collaborator |
+
+### 📝 **Note about Team Member 진선우:**
+- **진선우** appears in the course roster (Row #16: wlstjsdn0324@gmail.com)
+- GitHub mapping needs verification - may correspond to one of the above accounts
+- **정수민** (@jsmin2080-afk) email not found in course roster - may use different name/email
 
 ## 📝 Individual Instructions for Each Member
 

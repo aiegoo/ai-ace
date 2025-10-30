@@ -9,6 +9,7 @@ Welcome to your team leadership space in the AI-ACE team!
 - **GitHub Profile**: https://github.com/aiegoo
 - **Role**: Team Lead
 - **Contact**: creativeucon@gmail.com
+- **Course Email**: onofftony@gmail.com (베시시 Team 9)
 
 ### 🔗 **Quick Links to Your Files:**
 - **📁 Your Branch Home**: https://github.com/aiegoo/ai-ace/tree/aiegoo-lead

@@ -14,32 +14,40 @@ class TeamProgressTracker:
     def __init__(self):
         self.team_members = {
             "changminis": {
-                "name": "ChangMin",
+                "name": "장수민 (ChangMin)",
+                "korean_name": "장수민",
                 "branch": "changminis",
                 "email": "changminis@naver.com",
                 "status": "Active"
             },
             "heozico": {
-                "name": "Heozico", 
+                "name": "허지호 (Heozico)", 
+                "korean_name": "허지호",
                 "branch": "heozico",
+                "email": "heozico@naver.com",
                 "role": "Team Scriber",
                 "status": "Active"
             },
             "joonii93-ops": {
-                "name": "Joonii93",
-                "branch": "joonii93-ops", 
+                "name": "이상준 (Joonii93)",
+                "korean_name": "이상준",
+                "branch": "joonii93-ops",
+                "email": "joonii93@gmail.com", 
                 "role": "Operations Expert",
                 "status": "Active"
             },
             "jsmin2080-afk": {
                 "name": "정수민 (Jsmin2080)",
+                "korean_name": "정수민",
                 "branch": "jsmin2080-afk",
                 "course": "생성AI 7회차", 
                 "status": "Active"
             },
             "weisheit129": {
-                "name": "Weisheit129",
+                "name": "고준 (Weisheit129)",
+                "korean_name": "고준",
                 "branch": "weisheit129",
+                "email": "weisheit129@gmail.com",
                 "focus": "Wisdom & Deep Learning",
                 "status": "Active"
             }
