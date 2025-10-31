@@ -1,0 +1,30 @@
+{
+  "dataset_info": {
+    "source": "KOSIS (통계청 국가통계포털)",
+    "dataset_id": "INH_1B83A35",
+    "title": "혼인건수_시군구",
+    "period": "2024년 7-12월",
+    "unit": "건수",
+    "reference_date": "신고일 기준"
+  },
+  "analysis_summary": {
+    "analysis_date": "2024년 12월 31일",
+    "data_period": "2024년 7-12월 (6개월)",
+    "total_marriages": "112,356건",
+    "monthly_average": "18,726건",
+    "daily_average": "624건",
+    "peak_month": "12월 (22,508건)",
+    "lowest_month": "9월 (15,372건)",
+    "seasonal_variation": "46.5%",
+    "capital_region_share": "53.5%",
+    "top_region": "경기도 (31,668건)",
+    "growth_trend": "증가추세 (7월 대비 12월 +13.7%)",
+    "policy_priority": "지방 혼인 지원 강화, 계절별 행정서비스 최적화"
+  },
+  "methodology": {
+    "regional_categorization": "수도권(서울/경기/인천) vs 지방",
+    "seasonal_analysis": "월별 증감률 및 계절성 패턴",
+    "statistical_methods": "기술통계, 증감률 분석, 시각화",
+    "quality_checks": "결측치 처리, 이상치 검증, 데이터 일관성 확인"
+  }
+}
